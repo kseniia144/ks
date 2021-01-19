@@ -20,6 +20,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 
+
 public class App extends Application {
 
     private static Scene scene;
@@ -55,44 +56,46 @@ public class App extends Application {
         
         //Name column
         TableColumn<Product, String> nameColumn = new TableColumn<>("Name");
-        nameColumn.setMinWidth(200);
+        nameColumn.setMinWidth(240);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         
         //Price column
         TableColumn<Product, Double> priceColumn = new TableColumn<>("Price");
-        priceColumn.setMinWidth(100);
+        priceColumn.setMinWidth(200);
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price")); 
         
         //Quantity column
         TableColumn<Product, String> quantityColumn = new TableColumn<>("Quantity");
-        quantityColumn.setMinWidth(100);
+        quantityColumn.setMinWidth(200);
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         
         //Name input
         nameInput = new TextField();
         nameInput.setPromptText ("Name");
-        nameInput.setMinWidth(100);
+        nameInput.setMinWidth(50);
         
         //Price input 
         priceInput = new TextField();
         priceInput.setPromptText("Price");
+        priceInput.setMinWidth(50);
         
        //Quantity input
        quantityInput = new TextField();
        quantityInput.setPromptText("Quantity");
+       quantityInput.setMinWidth(50);
        
        //Button 
        Button addButton = new Button("Add");
        addButton.setOnAction(e -> addButtonClicked());
        Button deleteButton = new Button("Delete");
        deleteButton.setOnAction(e -> deleteButtonClicked());
-       Button editButton = new Button("Edit");
-       editButton.setOnAction(e -> editButtonClicked());
+       Button saveButton = new Button("Save");
+       saveButton.setOnAction(e -> saveButtonClicked());
        
        HBox hBox = new HBox();
        hBox.setPadding (new Insets(10,10,10,10));
        hBox.setSpacing(10);
-       hBox.getChildren().addAll(nameInput, priceInput, quantityInput, addButton, deleteButton, editButton);
+       hBox.getChildren().addAll(nameInput, priceInput, quantityInput, addButton, deleteButton, saveButton);
        
        table = new TableView<>(); 
        table.setItems(getProduct());
@@ -127,17 +130,13 @@ public class App extends Application {
             productSelected.forEach(allProducts::remove);
         }
        
-       //Edit button clicked
-       public void editButtonClicked(){
-           Product product = new Product();
-           ObservableList<Product> productSelected, allProducts;
-           allProducts = table.getItems();
-           productSelected = table.getSelectionModel().getSelectedItems();
-           productSelected.forEach(allProducts::edit);
-           table.getItems().add(product);
-           nameInput.clear();
-           priceInput.clear(); 
-           quantityInput.clear();
+       //Save button clicked
+       public void saveButtonClicked(){
+           ObservableList<Product> productSelected, allProducts; 
+            allProducts = table.getItems();
+            productSelected = table.getSelectionModel().getSelectedItems();
+            
+            productSelected.forEach(allProducts::remove);
         }
        
        //Get all of the products
