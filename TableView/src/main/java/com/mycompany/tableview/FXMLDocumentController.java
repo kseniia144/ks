@@ -18,7 +18,7 @@ public class FXMLDocumentController implements Initializable {
   
     @FXML
     private TableView<String> Product;
-
+    
     @FXML
     private TableColumn<String, String> nameInput;
 
@@ -26,7 +26,7 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn<String, Double> priceInput;
 
     @FXML
-    private TableColumn<String, Integer> quantityInput;
+    private TableColumn<String, String> quantityInput;
 
     @FXML
     private Button addButton;
@@ -35,7 +35,7 @@ public class FXMLDocumentController implements Initializable {
     private Button deleteButton;
     
     @FXML
-    private Button editButton;
+    private Button saveButton;
 
     @FXML
     void addButtonClicked() {
@@ -46,6 +46,6 @@ public class FXMLDocumentController implements Initializable {
     }
     
     @FXML
-    void editButtonClicked() {
+    void saveButtonClicked() {
     }
 }
