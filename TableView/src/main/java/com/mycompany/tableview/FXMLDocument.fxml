@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.tableview.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.tableview.FXMLDocumentController">
    <children>
-      <HBox layoutX="10.0" layoutY="14.0" prefHeight="292.0" prefWidth="363.0" spacing="10.0">
+      <HBox layoutX="10.0" layoutY="14.0" prefHeight="283.0" prefWidth="353.0" spacing="10.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -17,17 +17,18 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <children>
-            <TableView fx:id="Product" prefHeight="251.0" prefWidth="343.0">
+            <TableView fx:id="Product" prefHeight="272.0" prefWidth="339.0">
               <columns>
-                <TableColumn fx:id="nameInput" prefWidth="136.0" text="Name" />
-                <TableColumn fx:id="priceInput" prefWidth="100.0" text="Price" />
-                  <TableColumn fx:id="quantityInput" minWidth="8.0" prefWidth="106.0" text="Quantity" />
+                <TableColumn fx:id="nameInput" prefWidth="284.0" text="Name" />
+                <TableColumn fx:id="priceInput" prefWidth="250.0" text="Price" />
+                  <TableColumn fx:id="quantityInput" minWidth="8.0" prefWidth="250.0" text="Quantity" />
               </columns>
             </TableView>
          </children>
       </HBox>
-      <Button fx:id="addButton" layoutX="117.0" layoutY="306.0" mnemonicParsing="false" onAction="#addButtonClicked" text="Add" />
-      <Button fx:id="deleteButton" layoutX="165.0" layoutY="306.0" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete" />
-      <Button fx:id="editButton" layoutX="225.0" layoutY="306.0" mnemonicParsing="false" onAction="#editButtonClicked" text="Edit" />
+      <Button fx:id="addButton" layoutX="299.0" layoutY="306.0" mnemonicParsing="false" onAction="#addButtonClicked" text="Add" />
+      <Button fx:id="deleteButton" layoutX="349.0" layoutY="306.0" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete" />
+      <Button fx:id="saveButton" layoutX="411.0" layoutY="306.0" mnemonicParsing="false" onAction="#saveButtonClicked" text="Save" />
    </children>
 </AnchorPane>
+
