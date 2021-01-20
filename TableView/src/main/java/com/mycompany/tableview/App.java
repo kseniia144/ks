@@ -130,14 +130,19 @@ public class App extends Application {
             productSelected.forEach(allProducts::remove);
         }
        
-       //Save button clicked
-       public void saveButtonClicked(){
-           ObservableList<Product> productSelected, allProducts; 
-            allProducts = table.getItems();
-            productSelected = table.getSelectionModel().getSelectedItems();
-            
-            productSelected.forEach(allProducts::remove);
+      //Save button clicked
+       public void saveButtonClicked() throws IOException {
+        try (FileWriter writer = new FileWriter("ProductTableView.txt")) {
+            for (Product product : table) {
+                FileWriter.write {
+                        product.setName(nameInput.getText());
+                        product.setPrice(Double.parseDouble(priceInput.getText()));
+                        product.setQuantity(Integer.parseInt(quantityInput.getText()));
+                }
+            }
         }
+    }
+    
        
        //Get all of the products
        public ObservableList<Product> getProduct(){
